@@ -208,10 +208,10 @@ switch:
       if (isnan(id(w_sensor).state)) {
         return {};
       } else if (id(w_sensor).state > 4) {
-        // Running
+        # Running
         return true;
       } else {
-        // Not running
+        # Not running
         return false;
       }
     turn_off_action:
@@ -225,7 +225,7 @@ switch:
     pin: GPIO04
     on_turn_on:
       - delay: 500ms
-      - switch.turn_off: relay_off  //bi-stable relay so no need to keep on.
+      - switch.turn_off: relay_off  #bi-stable relay so no need to keep on.
       - light.turn_off: switch_led
     interlock: [relay_on]
   - platform: gpio
@@ -235,7 +235,7 @@ switch:
     pin: GPIO02
     on_turn_on:
       - delay: 500ms
-      - switch.turn_off: relay_on  //bi-stable relay so no need to keep on.
+      - switch.turn_off: relay_on  #bi-stable relay so no need to keep on.
       - light.turn_on: switch_led
     interlock: [relay_off]
   - platform: restart
